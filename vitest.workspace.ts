@@ -10,7 +10,12 @@ export default defineWorkspace([
         enabled: true,
         provider: 'playwright',
         // https://vitest.dev/guide/browser/playwright
-        instances: [{ browser: 'chromium' }],
+        instances: [
+          {
+            browser: 'chromium',
+            setupFiles: ['./src/tests/setup.ts'],
+          },
+        ],
       },
     },
   },
