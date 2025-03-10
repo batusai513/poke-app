@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
+    "dev:mocks": "VITE_ENABLE_MSW=true react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "test:browser": "vitest --workspace=vitest.workspace.ts",
     "typecheck": "react-router typegen && tsc"
@@ -51,5 +52,10 @@
   "packageManager": "pnpm@10.5.2",
   "engines": {
     "node": "22.14.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
