@@ -1,5 +1,6 @@
 {
   "include": [
+    "./vite-env.d.ts",
     "eslint.config.mjs",
     "**/*",
     "**/.server/**/*",
