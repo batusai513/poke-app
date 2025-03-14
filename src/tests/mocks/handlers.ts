@@ -1,3 +1,10 @@
-import type { HttpHandler } from 'msw';
+import { http, HttpResponse, type HttpHandler } from 'msw';
 
-export const handlers: Array<HttpHandler> = [];
+export const handlers: Array<HttpHandler> = [
+  http.get('https://pokeapi.co/api/v2/pokemon/', async () => {
+    const list = await import('./fixtures/pokemon-list').then((r) => {
+      return r.pokemonList;
+    });
+    return HttpResponse.json(list);
+  }),
+];
