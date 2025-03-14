@@ -7,4 +7,10 @@ export const handlers: Array<HttpHandler> = [
     });
     return HttpResponse.json(list);
   }),
+  http.get('https://pokeapi.co/api/v2/pokemon/:id', async () => {
+    const single = await import('./fixtures/pokemon').then((r) => {
+      return r.pokemon;
+    });
+    return HttpResponse.json(single);
+  }),
 ];
